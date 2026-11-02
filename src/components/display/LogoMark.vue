@@ -1,6 +1,9 @@
 <script setup lang="ts">
-/** The ConsentOS aperture mark, with optional wordmark text. `tile` is the round AI and app avatar treatment. */
-withDefaults(defineProps<{ size?: number; wordmark?: string; tile?: boolean; onDark?: boolean }>(), { size: 24 })
+import logoOnLight from '@/assets/branding/DigiConsentLogo.png'
+import logoOnDark from '@/assets/branding/DigiConsentLogoOnDark.png'
+
+/** The DigiConsent logo. `wordmark` shows the full logo; otherwise just the aperture mark. `tile` is the round AI and app avatar. */
+withDefaults(defineProps<{ size?: number; wordmark?: boolean; tile?: boolean; onDark?: boolean }>(), { size: 24 })
 const petals = [
   { d: 'M21 5L29 11L21 17V5Z', o: 0.95 },
   { d: 'M35 13V23L27 20L35 13Z', o: 0.85 },
@@ -12,16 +15,15 @@ const petals = [
 </script>
 
 <template>
-  <span class="inline-flex items-center gap-2">
-    <span
-      class="inline-flex shrink-0 items-center justify-center"
-      :class="tile ? 'rounded-full bg-brand-600 shadow-primary' : ''"
-      :style="tile ? { width: `${size * 1.6}px`, height: `${size * 1.6}px` } : {}"
-    >
-      <svg :width="size" :height="size" viewBox="0 0 42 42" role="img" aria-label="ConsentOS aperture mark">
-        <path v-for="p in petals" :key="p.d" :d="p.d" :opacity="p.o" :fill="tile || onDark ? '#ffffff' : '#3b5bff'" />
-      </svg>
-    </span>
-    <span v-if="wordmark" class="text-[17px] font-semibold tracking-tight" :class="onDark ? 'text-white' : 'text-ink'">{{ wordmark }}</span>
+  <img v-if="wordmark" :src="onDark ? logoOnDark : logoOnLight" alt="DigiConsent" class="block w-auto max-w-full shrink-0" :style="{ height: `${size * 1.7}px` }" />
+  <span
+    v-else
+    class="inline-flex shrink-0 items-center justify-center"
+    :class="tile ? 'rounded-full bg-brand-600 shadow-primary' : ''"
+    :style="tile ? { width: `${size * 1.6}px`, height: `${size * 1.6}px` } : {}"
+  >
+    <svg :width="size" :height="size" viewBox="0 0 42 42" role="img" aria-label="DigiConsent">
+      <path v-for="p in petals" :key="p.d" :d="p.d" :opacity="p.o" :fill="tile || onDark ? '#ffffff' : '#3b5bff'" />
+    </svg>
   </span>
 </template>

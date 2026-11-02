@@ -4,7 +4,7 @@ import { create } from 'storybook/theming'
 addons.setConfig({
   theme: create({
     base: 'light',
-    brandTitle: 'ConsentOS Design System',
+    brandTitle: 'DigiConsent Design System',
     colorPrimary: '#2563eb',
     colorSecondary: '#2563eb',
     appBg: '#ffffff',

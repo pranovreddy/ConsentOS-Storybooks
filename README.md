@@ -1,8 +1,8 @@
-# ConsentOS Design System
+# DigiConsent Design System
 
 Tokens and 135 Vue 3 components for consent products, documented in Storybook. Built with Vue 3, Tailwind CSS v4 and reka-ui.
 
-**See it without installing anything:** download [`share/ConsentOS-Design-System.html`](share/ConsentOS-Design-System.html) and open it. It's one self-contained file with every component, example screen and copyable code.
+**See it without installing anything:** download [`share/DigiConsent-Design-System.html`](share/DigiConsent-Design-System.html) and open it. It's one self-contained file with every component, example screen and copyable code.
 
 ## Use it in a project
 
@@ -14,12 +14,12 @@ npm install github:pranovreddy/ConsentOS-Storybooks
 
 ```ts
 // main.ts
-import 'consentos-design-system/style.css'
+import 'digiconsent-design-system/style.css'
 ```
 
 ```vue
 <script setup>
-import { Button, StatusChip } from 'consentos-design-system'
+import { Button, StatusChip } from 'digiconsent-design-system'
 </script>
 
 <template>
@@ -35,7 +35,7 @@ You don't need Tailwind, and the fonts are included. `style.css` includes a CSS 
 `dist/tokens.css` is plain CSS variables, and `dist/tokens.json` has the same values. Neither needs a build step.
 
 ```css
-@import 'consentos-design-system/tokens.css';
+@import 'digiconsent-design-system/tokens.css';
 
 .my-button {
   background: var(--color-primary);
@@ -50,7 +50,7 @@ Components are Vue only, so other frameworks need to rebuild them against these 
 
 ```css
 @import 'tailwindcss';
-@import 'consentos-design-system/theme.css';
+@import 'digiconsent-design-system/theme.css';
 ```
 
 ## Work on the system

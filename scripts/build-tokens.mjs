@@ -14,6 +14,6 @@ const merged = new Map([...collect(block).filter(([k]) => !k.startsWith('--anima
 merged.set('--font-sans', "'Geist', ui-sans-serif, system-ui, sans-serif")
 merged.set('--font-mono', "'Geist Mono', ui-monospace, monospace")
 
-writeFileSync(new URL('tokens.css', dist), `/* ConsentOS design tokens. Works in any project; no build step needed. */\n:root {\n${[...merged].map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`)
+writeFileSync(new URL('tokens.css', dist), `/* DigiConsent design tokens. Works in any project; no build step needed. */\n:root {\n${[...merged].map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`)
 writeFileSync(new URL('tokens.json', dist), JSON.stringify(Object.fromEntries(merged), null, 2) + '\n')
 console.log(`tokens: ${merged.size} variables`)

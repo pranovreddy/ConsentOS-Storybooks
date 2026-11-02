@@ -9,7 +9,7 @@ import type { IconName } from '@/icons'
 export interface NavItem { id: string; label: string; icon: IconName; count?: number; locked?: boolean; children?: NavItem[] }
 export interface NavGroup { title: string; items: NavItem[] }
 
-const props = withDefaults(defineProps<{ groups: NavGroup[]; active?: string; user: { name: string; role: string }; product?: string; expanded?: string[]; startCollapsed?: boolean }>(), { product: 'WiselyConsent', expanded: () => [] })
+const props = withDefaults(defineProps<{ groups: NavGroup[]; active?: string; user: { name: string; role: string }; expanded?: string[]; startCollapsed?: boolean }>(), { expanded: () => [] })
 const emit = defineEmits<{ navigate: [id: string] }>()
 const collapsed = ref(props.startCollapsed)
 const open = ref(new Set(props.expanded))
@@ -21,7 +21,7 @@ function toggle(id: string) {
 <template>
   <aside class="flex h-full shrink-0 flex-col border-r border-line bg-surface transition-[width] duration-200" :class="collapsed ? 'w-[var(--app-sidebar-collapsed-width)]' : 'w-[var(--app-sidebar-width)]'">
     <div class="flex h-[var(--app-header-height)] items-center justify-between border-b border-line px-4">
-      <LogoMark :wordmark="collapsed ? undefined : product" :size="22" />
+      <LogoMark :wordmark="!collapsed" :size="22" />
       <IconButton v-if="!collapsed" icon="chevrons-left" label="Collapse sidebar" size="sm" @click="collapsed = true" />
     </div>
     <IconButton v-if="collapsed" icon="chevron-right" label="Expand sidebar" size="sm" class="mx-auto mt-3" @click="collapsed = false" />

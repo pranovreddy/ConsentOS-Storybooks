@@ -77,9 +77,12 @@ Production has about 995 Vue files. These modules can be built from the library 
 | State map | Real India choropleth | Tile map | Needs official boundary data |
 | Table | `WorkspaceDataTable` | `DataTable` | Same pattern, different API |
 
+## Naming
+
+The product is DigiConsent everywhere in this system. Some source exports still say WiselyConsent or ConsentOS, so the library differs from those files on purpose.
+
 ## Open questions
 
 - **Primary button:** the screens show a subtle gradient, and production code uses flat `bg-accent`. The library follows production.
-- **Product name:** the code's logo says DigiConsent and the screens say WiselyConsent. The ACTIVE export says "Wisely Consent", with a space.
 - **Stepper label:** step 4 is "Confirmation" on Upload Consents and "Summary" elsewhere. The library uses "Summary".
 - **Numbers in the designs:** Upload Summary shows 800 + 200 errors on one screen and 1,000 errors on another. Consent Outcomes adds up to more than 14.30 Cr. The DND export shows 80% twice. Screen stories keep sample values, so check them against real data.

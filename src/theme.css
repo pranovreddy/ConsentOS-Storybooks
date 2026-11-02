@@ -3,7 +3,7 @@
 @import "./styles/portal-typography.css";
 
 /*
- * Tailwind v4 theme for the ConsentOS design system.
+ * Tailwind v4 theme for the DigiConsent design system.
  * styles/portal-tokens.css and styles/portal-typography.css are the base tokens and typography
  * roles; this file maps them to utilities and adds colour ramps.
  */
@@ -124,7 +124,7 @@
   --animate-drawer: drawer-in 240ms var(--ease-standard);
   --animate-sheet: sheet-in 240ms var(--ease-standard);
 
-  @keyframes pulse-danger { 50% { opacity: 0.55; } }
+  @keyframes pulse-danger { 50% { opacity: 0.8; } }
   @keyframes shimmer { to { background-position: -200% 0; } }
   @keyframes fade-in { from { opacity: 0; } }
   @keyframes modal-in { from { opacity: 0; transform: translate(-50%, -48%) scale(0.98); } }

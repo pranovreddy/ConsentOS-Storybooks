@@ -2,12 +2,12 @@
 import LogoMark from '../display/LogoMark.vue'
 
 /** Centred card for sign-in, activation and MFA forms. */
-withDefaults(defineProps<{ title: string; description?: string; product?: string }>(), { product: 'ConsentOS' })
+withDefaults(defineProps<{ title: string; description?: string }>(), {})
 </script>
 
 <template>
   <section class="w-full max-w-md rounded-2xl border border-line bg-surface p-8 shadow-card">
-    <LogoMark :wordmark="product" :size="26" />
+    <LogoMark wordmark :size="26" class="-ml-2" />
     <h1 class="portal-type-section-title mt-6">{{ title }}</h1>
     <p v-if="description" class="portal-type-page-subtitle mt-1">{{ description }}</p>
     <div class="portal-stack-form mt-6"><slot /></div>

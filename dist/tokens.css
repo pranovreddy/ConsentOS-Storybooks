@@ -1,4 +1,4 @@
-/* ConsentOS design tokens. Works in any project; no build step needed. */
+/* DigiConsent design tokens. Works in any project; no build step needed. */
 :root {
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;

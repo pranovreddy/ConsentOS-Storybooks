@@ -5,7 +5,7 @@ export default { title: 'Screens/Enterprise' }
 export const Home = screen(`
 <AppShell :groups="fx.enterpriseNav" active="home">
   <div class="mx-auto flex max-w-[1200px] flex-col gap-5">
-    <WelcomeHero eyebrow="Welcome to WiselyConsent" lead="You're in," name="Ravi Menon" description="Your organisation's consent infrastructure is a few steps away. Everything below guides you through. Pick up anytime; your progress is always saved." />
+    <WelcomeHero eyebrow="Welcome to DigiConsent" lead="You're in," name="Ravi Menon" description="Your organisation's consent infrastructure is a few steps away. Everything below guides you through. Pick up anytime; your progress is always saved." />
     <div class="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
       <OnboardingPath title="Your path to kick off migration" :percent="29" :stages="fx.onboardingStages" />
       <div class="flex flex-col gap-4">
@@ -13,7 +13,7 @@ export const Home = screen(`
           <Eyebrow>Need help?</Eyebrow>
           <p class="portal-type-section-title mt-2">We've got you.</p>
           <p class="portal-type-page-subtitle mt-3"><b class="font-medium text-ink">Onboarding playbook.</b> An 8-minute read on RBAC, rate cards, and enterprise selection.</p>
-          <p class="portal-type-page-subtitle mt-3"><b class="font-medium text-ink">Live support.</b> 24/7 WiselyConsent</p>
+          <p class="portal-type-page-subtitle mt-3"><b class="font-medium text-ink">Live support.</b> 24/7 DigiConsent</p>
           <LinkArrow class="mt-3">Read the playbook</LinkArrow>
         </Card>
         <Card><Eyebrow class="mb-4">Account context</Eyebrow><KeyValueList :items="fx.accountContext" /></Card>

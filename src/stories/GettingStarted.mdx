@@ -2,7 +2,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 <Meta title="Getting Started" />
 
-# ConsentOS Design System
+# DigiConsent Design System
 
 Tokens and Vue 3 components for consent products. Pick the route that fits your project.
 
@@ -12,17 +12,17 @@ Build the package once, then install the tarball in your project:
 
 ```bash
 npm run build && npm pack
-npm install ./consentos-design-system-0.1.0.tgz
+npm install ./digiconsent-design-system-0.1.0.tgz
 ```
 
 ```ts
 // main.ts
-import 'consentos-design-system/style.css'
+import 'digiconsent-design-system/style.css'
 ```
 
 ```html
 <script setup>
-import { Button, StatusChip } from 'consentos-design-system'
+import { Button, StatusChip } from 'digiconsent-design-system'
 </script>
 
 <template>
@@ -38,7 +38,7 @@ You don't need Tailwind: `style.css` is already compiled and includes the Geist 
 For plain HTML, React, Angular or anything else. These files need no build step:
 
 ```css
-@import 'consentos-design-system/tokens.css';
+@import 'digiconsent-design-system/tokens.css';
 
 .my-button {
   background: var(--color-primary);
@@ -49,13 +49,13 @@ For plain HTML, React, Angular or anything else. These files need no build step:
 }
 ```
 
-`consentos-design-system/tokens.json` has the same values for design tools or build scripts. Components are Vue-only, so other frameworks need to rebuild them against these tokens. Load Geist and Geist Mono yourself on this route.
+`digiconsent-design-system/tokens.json` has the same values for design tools or build scripts. Components are Vue-only, so other frameworks need to rebuild them against these tokens. Load Geist and Geist Mono yourself on this route.
 
 ## 3. Tailwind v4 project: use the theme
 
 ```css
 @import 'tailwindcss';
-@import 'consentos-design-system/theme.css';
+@import 'digiconsent-design-system/theme.css';
 ```
 
 This gives you classes such as `bg-brand-600`, `text-ink`, `rounded-lg`, `shadow-card` and `portal-type-page-title`.

@@ -72,9 +72,8 @@ watch(current, () => main.value?.scrollTo(0, 0))
 <template>
   <div class="flex h-full flex-col bg-page text-ink lg:flex-row">
     <aside class="hidden w-[272px] shrink-0 flex-col border-r border-line bg-surface lg:flex" style="padding-left: env(safe-area-inset-left, 0px)">
-      <button type="button" class="flex items-center gap-2.5 border-b border-line px-5 py-4 text-left" @click="go(START)">
-        <LogoMark :size="26" />
-        <span><span class="block text-sm font-semibold">ConsentOS</span><span class="block text-xs text-ink-2">Design System v0.1</span></span>
+      <button type="button" class="border-b border-line px-5 py-4 text-left" @click="go(START)">
+        <span><LogoMark wordmark :size="22" class="-ml-2" /><span class="mt-0.5 block text-xs text-ink-2">Design System v0.1</span></span>
       </button>
       <div class="border-b border-line p-3"><SearchInput v-model="query" placeholder="Find a component" /></div>
       <nav class="flex-1 overflow-y-auto p-3" aria-label="Design system">
