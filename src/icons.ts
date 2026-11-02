@@ -5,7 +5,7 @@ import {
   Funnel, Gavel, Globe, Hash, House, Info, Key, Languages, ListChecks, Lock, LogOut, Mail, Map, Menu, MessageSquare, MessageSquareDot, Mic, Paperclip, Phone,
   Plug, Plus, Radio, RadioTower, RefreshCw, Search, Send, Settings, Shield, ShieldAlert, ShieldCheck, ShieldOff, SlidersHorizontal, Sparkles, Trash2, TrendingUp, TriangleAlert,
   Upload, User, UserPlus, Users, Wallet, X, Zap,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 
 export const icons = {
   activity: Activity, 'arrow-left': ArrowLeft, 'arrow-left-right': ArrowLeftRight, 'arrow-right': ArrowRight, ban: Ban, bell: Bell, 'bell-ring': BellRing,
