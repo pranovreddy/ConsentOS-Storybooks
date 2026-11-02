@@ -1,0 +1,240 @@
+/**
+ * ConsentOS portals — global design tokens (:root).
+ * Source of truth for CSS variables; Tailwind maps these in tailwind.config.ts.
+ *
+ * Runtime portal accent overrides: --color-accent-rgb / --color-accent-fg-rgb
+ * (see src/shared/theme/themeEngine.ts and src/shared/tokens/semantic.ts).
+ *
+ * Figma palette reference: consentOsPortalChartColors (shared/echarts/themes).
+ */
+:root {
+  color-scheme: light;
+
+  /* =========================
+     Font family
+  ========================= */
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+  /* =========================
+     Font sizes (rem)
+     Includes Figma micro sizes (2xs, 13px-class) used across enterprise UI.
+  ========================= */
+  --font-size-2xs: 0.6875rem; /* 11px — labels, table headers */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px — body, table cells */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1rem; /* alias: body default */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+
+  /* Component-specific (Figma) */
+  --font-size-ui-compact: 0.8125rem; /* 13px — buttons, dense UI */
+  --font-size-table-header: var(--font-size-2xs);
+  --font-size-table-body: var(--font-size-sm);
+  --font-size-label: var(--font-size-xs);
+  --font-size-helper: var(--font-size-xs);
+  --font-size-error: var(--font-size-xs);
+
+  /* Responsive headings (portal-page-header pattern) */
+  --font-size-page-title: clamp(1.5rem, 1.2rem + 1vw, 1.875rem); /* 24px → 30px */
+  --font-size-section-title: clamp(1.125rem, 1rem + 0.5vw, 1.25rem); /* 18px → 20px */
+  --font-size-panel-title: 0.9375rem; /* 15px — chart / card panel headers */
+  --font-size-form-section: 1rem; /* 16px — form subsection headings */
+  --font-size-overline: 0.6875rem; /* 11px — uppercase micro labels */
+  --font-size-page-subtitle: 0.8125rem; /* 13px — page header supporting copy */
+  --font-size-body: var(--font-size-sm); /* 14px — default body */
+  --font-size-body-muted: var(--font-size-xs); /* 12px — secondary / helper copy */
+  --font-size-label-strong: var(--font-size-xs); /* 12px — field labels */
+
+  /* =========================
+     Font weights
+  ========================= */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* =========================
+     Line heights
+  ========================= */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.35;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+  /* =========================
+     Spacing (rem)
+  ========================= */
+  --space-0: 0;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+
+  /* =========================
+     Radius (rem)
+  ========================= */
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 0.875rem; /* 14px — enterprise cards */
+  --radius-2xl: 1rem; /* 16px — dialogs */
+  --radius-shell: 0.75rem;
+  --radius-control: 0.375rem;
+  --radius-button: var(--radius-md); /* 8px — Figma primary/secondary controls */
+  --radius-full: 999rem;
+
+  /* =========================
+     Layout (rem) — AppShell / workspace-shell-layout.constants
+  ========================= */
+  --app-header-height: 3.8125rem; /* 61px */
+  --app-sidebar-width: 15.9375rem; /* 255px expanded */
+  --app-sidebar-collapsed-width: 4rem; /* 64px */
+  --app-content-max-width: 100rem; /* 1600px — migration / module shells */
+  --page-padding-x: var(--space-4);
+  --page-padding-x-md: var(--space-6);
+  --page-padding-y: var(--space-4);
+  --page-padding-y-md: var(--space-6);
+  --section-gap: var(--space-8);
+  --form-gap: var(--space-4);
+
+  /* =========================
+     Components — sizes (rem)
+     Values from gtm-ui-classes, brands-lobs-ui-classes, AppShell.
+  ========================= */
+
+  /* Cards */
+  --card-padding: var(--space-5);
+  --card-radius: var(--radius-xl);
+  --card-radius-md: var(--radius-lg);
+  --card-border-width: 1px;
+
+  /* Buttons */
+  --button-height-sm: 1.875rem; /* 30px */
+  --button-height-md: 2.25rem; /* 36px / h-9 */
+  --button-height-lg: 2.5rem; /* 40px */
+  --button-height-confirm: 2.375rem; /* 38px — Figma alert/confirm actions */
+  --button-padding-x-sm: var(--space-3);
+  --button-padding-x-md: var(--space-4);
+  --button-padding-x-lg: var(--space-5);
+  --button-icon-size: 1em;
+  --button-font-size-sm: var(--font-size-xs);
+  --button-font-size-md: var(--font-size-ui-compact);
+
+  /* Inputs */
+  --input-height-sm: 1.875rem; /* 30px */
+  --input-height-md: 2.4375rem; /* 39px */
+  --input-height-lg: 2.5rem; /* 40px */
+  --input-padding-x: var(--space-3);
+  --input-font-size: var(--font-size-ui-compact);
+  --input-radius: var(--radius-md);
+
+  /* Tables */
+  --table-row-height: 3rem;
+  --table-cell-padding-x: var(--space-4);
+  --table-cell-padding-y: var(--space-3);
+  --table-header-font-size: var(--font-size-table-header);
+  --table-body-font-size: var(--font-size-table-body);
+
+  /* Dialogs */
+  --dialog-width-sm: 45rem; /* 720px */
+  --dialog-width-md: 50rem; /* 800px */
+  --dialog-width-lg: 55rem; /* 880px */
+  --dialog-padding: var(--space-6);
+  --dialog-radius: var(--radius-2xl);
+
+  /* =========================
+     Z-index
+  ========================= */
+  --z-base: 1;
+  --z-sticky-table: 3;
+  --z-dropdown: 1000;
+  --z-tooltip: 1100;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal-mask: 1300;
+  --z-modal: 1300;
+  --z-popover: 1400;
+  --z-toast: 1500;
+
+  /* =========================
+     Colors — RGB triplets (Tailwind: rgb(var(--x) / alpha))
+     Keep in sync with src/shared/tokens/semantic.ts
+  ========================= */
+  --color-canvas-rgb: 248 250 252;
+  --color-surface-rgb: 255 255 255;
+  --color-elevated-rgb: 255 255 255;
+  --color-border-rgb: 226 232 240;
+  --color-muted-rgb: 241 245 249;
+  --color-fg-rgb: 15 23 42;
+  --color-fg-muted-rgb: 71 85 105;
+  --color-danger-rgb: 220 38 38;
+  --color-success-rgb: 22 163 74;
+  --color-accent-rgb: 37 99 235;
+  --color-accent-fg-rgb: 255 255 255;
+
+  /* =========================
+     Colors — semantic (hex / Figma Consent OS)
+     Prefer Tailwind semantic utilities (bg-canvas, text-fg) for rgb tokens.
+  ========================= */
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f6fa;
+  --color-surface-subtle: #fafbfc;
+  --color-surface-close: #edf3f8; /* Figma dialog close chip */
+
+  --color-border: #e4e8f0;
+  --color-border-strong: #d0d5e2;
+  --color-border-light: #eef1f6;
+  --color-border-dialog: #dfe5ed; /* Figma alert/confirm shells */
+
+  --color-text: #0b1a33;
+  --color-text-muted: #5c6781;
+  --color-text-label: #8590a8;
+  --color-text-disabled: #94a3b8;
+  --color-text-placeholder: #a0a8bb;
+
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-soft: #dbeafe;
+  --color-primary-muted: #3b82f6;
+
+  --color-success: #15814c;
+  --color-success-soft: #ecfdf3;
+  --color-warning: #b26b00;
+  --color-warning-icon: #ca8a04; /* Figma confirm dialog icon */
+  --color-warning-soft: #fff4da;
+  --color-danger: #dc2626;
+  --color-danger-strong: #b5294c;
+  --color-info: #0284c7;
+
+  /* =========================
+     Shadows (px blur — fine detail)
+  ========================= */
+  --shadow-shell: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-card: 0 1px 3px rgba(11, 26, 51, 0.06);
+  --shadow-md: 0 4px 12px rgb(15 23 42 / 0.08);
+  --shadow-dialog: 0 8px 32px rgba(11, 26, 51, 0.12);
+  --shadow-lg: 0 12px 24px rgb(15 23 42 / 0.12);
+
+  /* =========================
+     Borders
+  ========================= */
+  --border-width: 1px;
+}

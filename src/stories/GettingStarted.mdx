@@ -1,0 +1,80 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Getting Started" />
+
+# ConsentOS Design System
+
+Tokens and Vue 3 components for consent products. Pick the route that fits your project.
+
+## 1. Vue 3 project: use the components
+
+Build the package once, then install the tarball in your project:
+
+```bash
+npm run build && npm pack
+npm install ./consentos-design-system-0.1.0.tgz
+```
+
+```ts
+// main.ts
+import 'consentos-design-system/style.css'
+```
+
+```html
+<script setup>
+import { Button, StatusChip } from 'consentos-design-system'
+</script>
+
+<template>
+  <Button icon="download">Download Errors</Button>
+  <StatusChip status="OPTED_IN" />
+</template>
+```
+
+You don't need Tailwind: `style.css` is already compiled and includes the Geist fonts. It also includes Tailwind's reset, so if you add it to an existing app, check that your current styles still look right.
+
+## 2. Any other project: use the tokens
+
+For plain HTML, React, Angular or anything else. These files need no build step:
+
+```css
+@import 'consentos-design-system/tokens.css';
+
+.my-button {
+  background: var(--color-primary);
+  color: #fff;
+  height: var(--button-height-md);
+  border-radius: var(--radius-button);
+  font-family: var(--font-sans);
+}
+```
+
+`consentos-design-system/tokens.json` has the same values for design tools or build scripts. Components are Vue-only, so other frameworks need to rebuild them against these tokens. Load Geist and Geist Mono yourself on this route.
+
+## 3. Tailwind v4 project: use the theme
+
+```css
+@import 'tailwindcss';
+@import 'consentos-design-system/theme.css';
+```
+
+This gives you classes such as `bg-brand-600`, `text-ink`, `rounded-lg`, `shadow-card` and `portal-type-page-title`.
+
+## How it's organised
+
+| Section | What's in it |
+|---|---|
+| **Foundations** | Colors, type, spacing, radius, elevation, motion, icons, logo, content, accessibility |
+| **Actions, Forms, Data Display, Charts, Navigation, Feedback, Overlays, Data** | General-purpose components |
+| **Consent Patterns** | Blocks specific to consent operations, such as result cards and decision bars |
+| **Mobile** | Subscriber app components, sized for touch |
+| **Screens** | Example screens composed only from the components above |
+
+## Principles
+
+- **Never blame the user.** Errors say what happened, why, and what to do next.
+- **No dead ends.** Empty and error states offer a next step, and disabled actions explain themselves.
+- **Reveal complexity progressively.** Start with the simple path and put detail one step away.
+- **Audit by design.** Masked values, hashes and diffs make changes traceable.
+- **Never colour alone.** Status always has a label, icon or mark as well.
+- **A person decides.** AI suggestions show confidence and reasons, and never act by themselves.
